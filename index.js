@@ -27,7 +27,7 @@ app.use("/uploads",express.static("uploads"))
 app.post("/uploadFile",upload.single("file"),function(request,response){
     response.send(`
         <script>
-            window.location.href = 'http://localhost:3000/uploads/${fileName}'
+            window.location.href = 'https://nodeupload.onrender.com/uploads/${fileName}'
         </script>
     `)
 })
