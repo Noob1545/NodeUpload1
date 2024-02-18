@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeUpload</title>
+</head>
+<body>
+    <div id="MainDiv">
+        <h1>NodeUpload</h1>
+        <form action="/uploadFile" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="FileInput">
+            <button type="button" id="UploadButton">bir dosya yüklemek için tıklayın.</button>
+            <br>
+            <br>
+            <button id="sendForm">Dosyanızın URL sini almak için tıklayın.</button>
+        </form>
+    </div>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #MainDiv{
+            text-align: center;
+        }
+        #FileInput{
+            display: none;
+        }
+        #UploadButton{
+            padding: 150px 200px;
+            font-size: x-large;
+            cursor: pointer;
+            background-color: white;
+            border: 2px dashed black;
+        }
+        #sendForm{
+            padding: 150px 200px;
+            font-size: x-large;
+            cursor: pointer;
+            background-color: white;
+            border: 2px dashed black;
+            display: none;
+        }
+    </style>
+    <script>
+        document.getElementById("UploadButton").onclick = function(){
+            document.getElementById("FileInput").click()
+        }
+        document.getElementById("FileInput").onchange = function(){
+            document.getElementById("UploadButton").style.display = "none"
+            document.getElementById("sendForm").style.display = "block"
+        }
+    </script>
+</body>
+</html>
